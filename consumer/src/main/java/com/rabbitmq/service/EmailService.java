@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 // bindings其实就是用来确定队列和交换机绑定关系
 @RabbitListener(bindings = @QueueBinding(
         // email.topic.queue 是队列名字，这个名字你可以自定随便定义。
-        value = @Queue(value = "email.topic.queue", autoDelete = "true"),
+        value = @Queue(value = "email.topic.queue", autoDelete = "false"),
         // topic_order_exchange 交换机的名字 必须和生产者保持一致
         exchange = @Exchange(value = "topic_order_exchange",
                 // 这里是确定的rabbitmq模式是：fanout 是以广播模式 、 发布订阅模式
